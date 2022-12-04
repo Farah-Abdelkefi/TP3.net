@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<TP3.Models.Person>
+
+@{
+    ViewData["Title"] = "PERSONS LIST";
+}
+
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link disabled" color:darkblue > Persons List</a>
+    </li>
+    <li class="nav-item">
+        <a asp-action="search" class="nav-link active"> search </a>
+    </li>
+</ul>
+<br />
+<br />
+<div>
+
+    @{
+
+     <div class="container">
+                <div class="row ">
+           <div class="col-sm-1 ">Id</div>
+                    <div class="col-sm-1" >First Name</div>
+                    <div class="col-sm-1" >Last Name </div>
+                    <div class="col-sm-1">Country</div>
+                    <div class="col-sm-3" >Email</div>
+                    <div class="col-sm-4" >Image</div>
+        </div>
+    </div>
+
+foreach (Person p in Model){
+     <div class="container">
+                    <div class="row">
+           <div class="col-sm-1" >@p.Id </div>
+           <div class="col-sm-1">@p.FirstName</div>
+           <div class="col-sm-1" >@p.LastName</div>
+           <div class="col-sm-1" >@p.Country</div>
+           <div class="col-sm-3" >@p.Email</div>
+           <div class="col-sm-4" >@p.Image</div>
+        </div>
+     </div>
+
+        }
+        }

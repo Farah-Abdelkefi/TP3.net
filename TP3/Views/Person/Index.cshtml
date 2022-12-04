@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model TP3.Models.Person
+
+}
+@{
+    ViewData["Title"] = " PERSON INFOS ";
+}
+
+
+
+@{
+    TP3.Models.Person p = Model;
+    if (Model == null)
+    {
+    <h1 class="alert-danger">
+                L'id n'est pas valide' !
+    </h1>
+    }
+    else
+    {
+    <div class="container" >
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@p.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@p.FirstName  @p.LastName </h5>
+                    <p class="card-text">
+                        @p.Country <br> @p.Email<br>
+                    </p>
+                    <a asp-action="all" class="btn btn-primary">Persons Lists</a>
+                </div>
+            </div>
+    </div>
+        
+    }
+}
